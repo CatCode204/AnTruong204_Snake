@@ -61,5 +61,6 @@ class Snake:
     
     def Draw(self,screen,blockSize):
         for i in range(len(self.body)):
-            pygame.draw.rect(screen,RED,(self.body[i][0]*blockSize,self.body[i][1]*blockSize,blockSize,blockSize))
-        pygame.draw.rect(screen,GREEN,(self.headX*blockSize,self.headY*blockSize,blockSize,blockSize))
+            pygame.draw.rect(screen,GREEN,(self.body[i][0]*blockSize,self.body[i][1]*blockSize,blockSize,blockSize))
+        pygame.draw.rect(screen,RED,(self.headX*blockSize,self.headY*blockSize,blockSize,blockSize))
+        pygame.display.update()
