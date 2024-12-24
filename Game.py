@@ -3,13 +3,16 @@ import pygame
 import enum
 import Snake
 from Snake import *
+import time
+
+np.random.seed(np.random.randint(0,1000))
 
 class Game:
     def __init__(self,screenWidth,screenHeight,blockSize):
         self.screenWidth = screenWidth
         self.screenHeight = screenHeight
         self.snake = Snake(screenWidth//2,screenHeight//2)
-        self.foodPosition = (0,0)
+        self.foodPosition = (self.snake.headX,self.snake.headY)
         self.GenerateFood()
         self.score = 0
         self.blockSize = blockSize
@@ -58,7 +61,6 @@ class Game:
             pygame.time.delay(100)
             #pygame.time.Clock().tick(60)
         pygame.quit()
-    
     
 if __name__ == "__main__":
     game = Game(40,40,20)
